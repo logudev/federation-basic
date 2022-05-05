@@ -1,0 +1,24 @@
+scalar _FieldSet
+scalar _Any
+type User {
+  name: String
+  job: String
+}
+type Query {
+  users: [User]
+  _service: _Service!
+}
+type _Service {
+  sdl: String
+}
+directive @key(fields: _FieldSet!, resolvable: Boolean = true) on OBJECT | INTERFACE
+directive @requires(fields: _FieldSet!) on FIELD_DEFINITION
+directive @provides(fields: _FieldSet!) on FIELD_DEFINITION
+directive @extends on OBJECT | INTERFACE
+directive @external(reason: String) on OBJECT | FIELD_DEFINITION
+directive @tag(name: String!) on FIELD_DEFINITION | OBJECT | INTERFACE | UNION | ARGUMENT_DEFINITION | SCALAR | ENUM | ENUM_VALUE | INPUT_OBJECT | INPUT_FIELD_DEFINITION
+"Exposes a URL that specifies the behavior of this scalar."
+directive @specifiedBy(
+    "The URL that specifies the behavior of this scalar."
+    url: String!
+  ) on SCALAR

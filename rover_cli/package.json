@@ -1,0 +1,14 @@
+{
+  "name": "federation_simple",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently 'npm:books' 'npm:users' 'npm:main'",
+    "main": "node .",
+    "books": "node books.js",
+    "users": "node users.js"
+  },
+  "author": "",
+  "license": "ISC"
+}

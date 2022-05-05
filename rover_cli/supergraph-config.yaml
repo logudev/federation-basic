@@ -1,0 +1,10 @@
+federation_version: 2 # Without this line, Rover uses Federation 1
+subgraphs:
+  books:
+    routing_url: http://localhost:4002/
+    schema:
+      subgraph_url: http://localhost:4002/
+  users:
+    routing_url: http://localhost:4001/
+    schema:
+      subgraph_url: http://localhost:4001/

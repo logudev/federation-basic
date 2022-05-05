@@ -1,0 +1,6 @@
+** Local Schema Composition with Remote Subgraphs **
+
+
+Composes the supergraph schema and writes them to a separate file.
+
+rover supergraph compose --config ./supergraph-config.yaml > supergraph.graphql

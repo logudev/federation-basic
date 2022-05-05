@@ -1,0 +1,18 @@
+** Composition in Apollo Studio with Remote Subgraphs **
+
+
+rover graph introspect http://localhost:5001/graphql > users.graphql
+
+rover graph introspect http://localhost:5002/graphql > todos.graphql
+  
+rover subgraph publish simplegraph@current \
+--name users \
+--routing-url http://localhost:5001/ \
+--schema ./users.graphql \
+--convert
+
+  rover subgraph publish simplegraph@current \
+--name todos \
+--routing-url http://localhost:5001=2/ \
+--schema ./todos.graphql \
+--convert
